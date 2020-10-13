@@ -12,9 +12,8 @@ namespace Template
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Texture2D redBox;
         Player player;
-
+        Wall wall;
         List<GameObject> gameObjects;
 
         //KOmentar
@@ -49,9 +48,10 @@ namespace Template
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            redBox = Content.Load<Texture2D>("RödLåda");
-            player = new Player(redBox, Vector2.Zero, new Point(100, 150));
-
+            Texture2D redBox = Content.Load<Texture2D>("RödLåda");
+            Texture2D blueBox = Content.Load<Texture2D>("BlåLåda");
+            player = new Player(redBox, Vector2.Zero, new Point(25, 25));
+            wall = new Wall(blueBox, new Vector2(50,0), new Point(10, 100));
             gameObjects.Add(player);
             // TODO: use this.Content to load your game content here 
         }
@@ -77,19 +77,6 @@ namespace Template
 
             // TODO: Add your update logic here
             KeyboardState kstate = Keyboard.GetState();
-
-            if (kstate.IsKeyDown(Keys.NumPad1))
-            {
-
-            }
-            else if (kstate.IsKeyDown(Keys.NumPad2))
-            {
-
-            }
-            else if (kstate.IsKeyDown(Keys.NumPad2))
-            {
-
-            }
 
             foreach (GameObject gameObject in gameObjects)
             {
