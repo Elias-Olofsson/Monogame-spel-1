@@ -13,7 +13,6 @@ namespace Template
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Player player;
-        Wall wall;
         List<GameObject> gameObjects;
 
         //KOmentar
@@ -51,8 +50,8 @@ namespace Template
             Texture2D redBox = Content.Load<Texture2D>("RödLåda");
             Texture2D blueBox = Content.Load<Texture2D>("BlåLåda");
             player = new Player(redBox, Vector2.Zero, new Point(25, 25));
-            wall = new Wall(blueBox, new Vector2(50,0), new Point(10, 100));
             gameObjects.Add(player);
+            gameObjects.Add(new Wall(blueBox, new Vector2(50, 0), new Point(10, 100)));
             // TODO: use this.Content to load your game content here 
         }
 
