@@ -15,6 +15,11 @@ namespace Template
         protected Vector2 pos;
         protected Rectangle rectangle;
 
+        public Rectangle Rectangle
+        {
+            get { return rectangle; }
+        }
+
         public GameObject(Texture2D texture, Vector2 pos, Point size)
         {
             this.texture = texture;

@@ -49,9 +49,24 @@ namespace Template
 
             Texture2D redBox = Content.Load<Texture2D>("RödLåda");
             Texture2D blueBox = Content.Load<Texture2D>("BlåLåda");
-            player = new Player(redBox, Vector2.Zero, new Point(25, 25));
+            player = new Player(redBox, new Vector2(10, 10), new Point(25, 25));
+
             gameObjects.Add(player);
-            gameObjects.Add(new Wall(blueBox, new Vector2(50, 0), new Point(10, 100)));
+
+            gameObjects.Add(new Wall(blueBox, new Vector2(0, 0), new Point(700, 10)));
+            gameObjects.Add(new Wall(blueBox, new Vector2(0, 10), new Point(10, 400)));
+            gameObjects.Add(new Wall(blueBox, new Vector2(700, 0), new Point(10, 410)));
+            gameObjects.Add(new Wall(blueBox, new Vector2(10, 400), new Point(650, 10)));
+            gameObjects.Add(new Wall(blueBox, new Vector2(35, 10), new Point(20, 200)));
+            gameObjects.Add(new Wall(blueBox, new Vector2(10, 250), new Point(25, 25)));
+            gameObjects.Add(new Wall(blueBox, new Vector2(100, 10), new Point(40, 10)));
+            gameObjects.Add(new Wall(blueBox, new Vector2(100, 50), new Point(20, 326)));
+            gameObjects.Add(new Wall(blueBox, new Vector2(120, 270), new Point(500, 20)));
+            gameObjects.Add(new Wall(blueBox, new Vector2(400, 330), new Point(220, 46)));
+            gameObjects.Add(new Wall(blueBox, new Vector2(150, 10), new Point(20, 100)));
+            gameObjects.Add(new Wall(blueBox, new Vector2(150, 140), new Point(20, 130)));
+            gameObjects.Add(new Wall(blueBox, new Vector2(200, 34), new Point(420, 200)));
+
             // TODO: use this.Content to load your game content here 
         }
 
@@ -80,6 +95,16 @@ namespace Template
             foreach (GameObject gameObject in gameObjects)
             {
                 gameObject.Update();
+            }
+
+            Player player = gameObjects[0] as Player;
+
+            for (int i = 1; i < gameObjects.Count; i++)
+            {
+                if (player.Rectangle.Intersects(gameObjects[i].Rectangle))
+                {
+                    Exit();
+                }
             }
 
             base.Update(gameTime);
