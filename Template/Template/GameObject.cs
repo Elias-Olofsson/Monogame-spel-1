@@ -9,9 +9,9 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Template
 {
-    class GameObject
+    class GameObject //gör egenskaper som både spelaren och väggarna ärver
     {
-        protected Texture2D texture;
+        protected Texture2D texture; //texture för gameobjectet
         protected Vector2 pos;
         protected Rectangle rectangle;
 
@@ -29,7 +29,7 @@ namespace Template
 
         public virtual void Update()
         {
-            rectangle.Location = pos.ToPoint();
+            rectangle.Location = pos.ToPoint(); //syncar objectets rectangle med pos 
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
