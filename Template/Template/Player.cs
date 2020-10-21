@@ -89,7 +89,6 @@ namespace Template
     {
         Normal,
         Bad,
-        Worst,
-        Bonus
+        Worst
     }
 }
