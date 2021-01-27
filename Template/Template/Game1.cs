@@ -60,12 +60,16 @@ namespace Template
             gameObjects.Add(new Wall(blueBox, new Vector2(35, 10), new Point(20, 200)));
             gameObjects.Add(new Wall(blueBox, new Vector2(10, 250), new Point(25, 25)));
             gameObjects.Add(new Wall(blueBox, new Vector2(100, 10), new Point(40, 10)));
-            gameObjects.Add(new Wall(blueBox, new Vector2(100, 50), new Point(20, 326)));
+            gameObjects.Add(new Wall(blueBox, new Vector2(100, 50), new Point(20, 321)));
+            gameObjects.Add(new Wall(blueBox, new Vector2(100, 396), new Point(225, 4)));
             gameObjects.Add(new Wall(blueBox, new Vector2(120, 270), new Point(500, 20)));
-            gameObjects.Add(new Wall(blueBox, new Vector2(400, 330), new Point(220, 46)));
+            gameObjects.Add(new Wall(blueBox, new Vector2(400, 330), new Point(220, 45)));
             gameObjects.Add(new Wall(blueBox, new Vector2(150, 10), new Point(20, 100)));
             gameObjects.Add(new Wall(blueBox, new Vector2(150, 140), new Point(20, 130)));
-            gameObjects.Add(new Wall(blueBox, new Vector2(200, 34), new Point(420, 200)));
+            gameObjects.Add(new Wall(blueBox, new Vector2(200, 34), new Point(20, 200)));
+            gameObjects.Add(new Wall(blueBox, new Vector2(220, 34), new Point(400, 20)));
+            gameObjects.Add(new Wall(blueBox, new Vector2(265, 89), new Point(20, 181)));
+            gameObjects.Add(new Wall(blueBox, new Vector2(320, 54), new Point(20, 181)));
 
             // TODO: use this.Content to load your game content here 
         }
